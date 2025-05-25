@@ -44,19 +44,21 @@ const ShowCategoriesButton = (data) => {
 const ShowAllCategories = (pets) => {
 
     const cardContainer = document.getElementById("CardContainer")
+     
     cardContainer.innerHTML = ""
 
     if (pets?.length == 0) {
-        const notFound = document.getElementById("NotFound")
+      cardContainer.classList=""
+       
         const singleCard = document.createElement('div')
 
         singleCard.innerHTML = NoResult()
-        notFound.appendChild(singleCard)
+        cardContainer.appendChild(singleCard)
     }
 
 
     pets?.forEach(element => {
-
+ cardContainer.classList="grid grid-cols-1 lg:grid-cols-3 gap-2 place-items-center"
         const singleCard = document.createElement('div')
 
         singleCard.innerHTML = cards(element)
